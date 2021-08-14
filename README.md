@@ -44,7 +44,7 @@ $ sudo apt-get install pigpio
 Ahora procedemos a instalar un gestor de paquetes para nodejs, el cual posteriormente nos
 permitira instalar otros paquetes para usar los pines Gpio y el uso de sockets
 ```sh
-$npm install -g npm
+ npm install -g npm
 ```
 Teniendo correctamente instalado npm ahora procedemos con la instalacion de express:
 ```sh
@@ -52,11 +52,11 @@ npm install pigpio
 ```
 Teniendo correctamente instalado npm ahora procedemos con la instalacion de express:
 ```sh
-$ npm install express --save
+ npm install express --save
 ```
 Ahora por ultimo haremos la instalacion de websocket para ello usaremos el siguiente comando:
 ```sh
-$ npm install ws --save
+ npm install ws --save
 ```
 Ahora nos posicionamos en la carpeta donde hemos descargado los archivos y ejecutamos el programa 
 como usuario root:
@@ -87,7 +87,7 @@ sudo nano /etc/default/motion
 - start_motion_daemon YES
 
 ```sh
-sudo motion
+$ sudo motion
 ```
 
 
