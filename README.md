@@ -33,28 +33,28 @@ Ahora procedemos a instalarlo
 ```sh
  $ sudo apt-get install -y nodejs
 ```
-ahora verifiquemos que la instalacio fue exitosa con la siguiente linea
+Ahora verifiquemos que la instalacio fue exitosa con la siguiente linea
 ```sh
  node -v
 ```
-ahora deberemos instalar la biblioteca de pigpio con los siguientes comandos:
+Ahora deberemos instalar la biblioteca de pigpio con los siguientes comandos:
 ```sh
 $ sudo apt-get install pigpio
 ``````
-ahora procedemos a instalar un gestor de paquetes para nodejs, el cual posteriormente nos
+Ahora procedemos a instalar un gestor de paquetes para nodejs, el cual posteriormente nos
 permitira instalar otros paquetes para usar los pines Gpio y el uso de sockets
 ```sh
 $npm install -g npm
 ```
-teniendo correctamente instalado npm ahora procedemos con la instalacion de express:
+Teniendo correctamente instalado npm ahora procedemos con la instalacion de express:
 ```sh
 npm install pigpio
 ```
-teniendo correctamente instalado npm ahora procedemos con la instalacion de express:
+Teniendo correctamente instalado npm ahora procedemos con la instalacion de express:
 ```sh
 $ npm install express --save
 ```
-ahora por ultimo haremos la instalacion de websocket para ello usaremos el siguiente comando:
+Ahora por ultimo haremos la instalacion de websocket para ello usaremos el siguiente comando:
 ```sh
 $ npm install ws --save
 ```
