@@ -15,11 +15,54 @@ Concentrador Smarthome es un sistema embebido desarrollado en Python 3 para Rasp
   
 ### Instalación
 Se necesita de Python 3 para su correcto funcionamiento
+Para poder hacer uso del programa SmartHome es necesario hacer la instalacion de algunos paquetes.
 
-node js
-packeteria sokets
-Gpio
-
+En primer actualice la lista de paquetes de su sistema:
+```sh
+$ sudo apt-get update
+```
+Actualice todos sus paquetes instalados a su ultima version:
+```sh
+ $ sudo apt-get dist-upgrade
+```
+Ahora procedemos a descargar e instalar la version mas reciente de Nodejs, para ello usaremos el siguiente comando
+```sh
+ $ curl -sL https://deb.nodesource.com/setup_8.x | sudo -E bash -
+ ```
+Ahora procedemos a instalarlo
+```sh
+ $ sudo apt-get install -y nodejs
+```
+ahora verifiquemos que la instalacio fue exitosa con la siguiente linea
+```sh
+ node -v
+```
+ahora deberemos instalar la biblioteca de pigpio con los siguientes comandos:
+```sh
+$ sudo apt-get install pigpio
+``````
+ahora procedemos a instalar un gestor de paquetes para nodejs, el cual posteriormente nos
+permitira instalar otros paquetes para usar los pines Gpio y el uso de sockets
+```sh
+$npm install -g npm
+```
+teniendo correctamente instalado npm ahora procedemos con la instalacion de express:
+```sh
+npm install pigpio
+```
+teniendo correctamente instalado npm ahora procedemos con la instalacion de express:
+```sh
+$ npm install express --save
+```
+ahora por ultimo haremos la instalacion de websocket para ello usaremos el siguiente comando:
+```sh
+$ npm install ws --save
+```
+Ahora nos posicionamos en la carpeta donde hemos descargado los archivos y ejecutamos el programa 
+como usuario root:
+```sh
+$ sudo nodejs app.js
+```
 Esto es para las camaras de seguridad
 ```sh
 $ sudo apt-get install motion
