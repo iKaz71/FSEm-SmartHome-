@@ -7,9 +7,9 @@ Concentrador Smarthome es un sistema embebido desarrollado en Python 3 para Rasp
 -Desplegado de camaras de seguridad 
  
 ## Autores
-  -Gaytan Medina Gabriela
-  -Omar Hernández Francisco
-  -Santos Escobar Christian Alexis
+- Esto es viñeta 1.
+  - Viñeta 1.1 con sangria.
+  - Viñeta N.
   
 ### Instalación
 Se necesita de Python 3 para su correcto funcionamiento
