@@ -91,3 +91,7 @@ sudo motion
 ```
 
 
+License
+----
+
+MIT
