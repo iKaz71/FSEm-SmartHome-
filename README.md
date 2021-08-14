@@ -43,4 +43,8 @@ sudo nano /etc/default/motion
 ```
 - start_motion_daemon YES
 
+```sh
+sudo motion
+```
+
 
