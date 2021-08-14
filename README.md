@@ -1,15 +1,17 @@
 # FSEm-SmartHome-
 Concentrador Smarthome es un sistema embebido desarrollado en Python 3 para Raspberry Pi 3. 
--Podra encender apagar luces
--Atenuar la luz
--Abrir y cerrar el garage
--Programacion de las luces 
--Desplegado de camaras de seguridad 
+- Abrir y cerrar el Garaje
+- Encendido de luces
+- Atenuacion de la luz
+- Programación de encendido y apagado de luces
+- Alerta de Timbre
+- Desplegado de Camaras de Seguridad
  
 ## Autores
-- Esto es viñeta 1.
-  - Viñeta 1.1 con sangria.
-  - Viñeta N.
+- Gaytan Medina Gabriela
+- Omar Hernández Francisco
+- Santos Escobar Christian Alexis
+  
   
 ### Instalación
 Se necesita de Python 3 para su correcto funcionamiento
@@ -18,11 +20,27 @@ node js
 packeteria sokets
 Gpio
 
-
+Esto es para las camaras de seguridad
 ```sh
-$ apt install motion
+$ sudo apt-get install motion
+```
+Editamos los siguientes parametros 
+```sh
+$ sudo nano /etc/motion/motion.conf
 ```
 
+- daemon ON
+- image width 320
+- image height 240
+- stream_port 8081
+- stream:localhost off
+- webcontrol_port 8888
+- webcontrol_localhost off
 
+Editamos el siguiente
+```sh
+sudo nano /etc/default/motion
+```
+- start_motion_daemon YES
 
 
