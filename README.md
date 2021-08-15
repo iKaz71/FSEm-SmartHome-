@@ -58,11 +58,7 @@ Ahora por ultimo haremos la instalacion de websocket para ello usaremos el sigui
 ```sh
  npm install ws --save
 ```
-Ahora nos posicionamos en la carpeta donde hemos descargado los archivos y ejecutamos el programa 
-como usuario root:
-```sh
-$ sudo nodejs app.js
-```
+
 Esto es para las camaras de seguridad
 ```sh
 $ sudo apt-get install motion
@@ -89,6 +85,15 @@ sudo nano /etc/default/motion
 ```sh
 $ sudo motion
 ```
+
+Ahora nos posicionamos en la carpeta donde hemos descargado los archivos y ejecutamos el programa 
+como usuario root:
+```sh
+$ sudo nodejs app.js
+```
+
+pudes acceder de manera remota conectado a la misma utilizando la ip del raspberry
+
 # interfaz en movil 
 ![1](/img/1.png)![2](/img/2.png)
 
