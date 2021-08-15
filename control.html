@@ -19,31 +19,40 @@
         <!---Estilos para el modal del timbre-->
         
         <script type="text/javascript">
-    window.onload = function() {
-        var ws = new WebSocket("ws://192.168.1.73:31337");
-
+        //este metodo garantiza que el codigo js se exucatara despues de 
+        //cargar completamente la pagina
+        window.onload = function() {
+        //se crea una conexion con el servidor
+        var ws = new WebSocket("ws://192.168.1.73:2021");
+        //funcion para deteccion de eventos al establecer la conexion
         ws.onopen = function(event) {
+            
+            //detecta cuando se manda la señal de prender el led y envia esa inforamacion
+            //al servidor
             document.getElementById("buttonOn").addEventListener("click", function(ev) {
             ws.send( JSON.stringify({ led : 1 }) );
             }, false);
             
+            //detecta cuando se manda la señal de apagar el led y envia esa informacion
+            //al servidor
             document.getElementById("buttonOff").addEventListener("click", function(ev) {
             ws.send( JSON.stringify({ led : 0 }) );
             }, false);
             
+            //detecta cuando se manda la señal de abrir el garage y envia esa informacion
+            //al servidor
             document.getElementById("abrirGarage").addEventListener("click", function(ev) {
             ws.send( JSON.stringify({ motIN1 : 1 }) );
             }, false);
             
+            //detecta cuando se manda la señal de cerrar el garage y envia esa informacion
+            //al servidor
             document.getElementById("cerrarGarage").addEventListener("click", function(ev) {
             ws.send( JSON.stringify({ motIN2 : 1}) );
             }, false);
             
-            document.getElementById("buttonOn").addEventListener("click", function(ev) {
-            var c = document.getElementById("LedTem").value;
-            ws.send(JSON.stringify({ m : c }));
-            }, false);
-            
+            //lee el tiempo en que debera prenderser el led y envia
+            //las horas y minutos para su encendido
             
             document.getElementById("Encendido").addEventListener("click", function(ev) {
             var mE = document.getElementById("LedTemMin").value;
@@ -51,19 +60,26 @@
             ws.send(JSON.stringify({ mE : mE , hE: hE}));
             }, false);
             
+            //lee el tiempo en que debera apagarse el led y envia
+            //las horas y minutos para su apagado
             document.getElementById("Apagado").addEventListener("click", function(ev) {
             var mA = document.getElementById("LedTemMin").value;
             var hA = document.getElementById("LedTem").value;
             ws.send(JSON.stringify({ mA : mA , hA: hA}));
             }, false);
             
+            //lee la intensidad a traves de un slider y envia al servidor
+            //el valor del brillo del led
             document.getElementById("slider").addEventListener("input", function(ev) {
             var p = document.getElementById("slider").value;
             console.log(p)
             ws.send( JSON.stringify({ pwm : p }) );
             }, false);
         };
-
+        
+        
+        //recibe el mensaje del servidor cuando se presiona el boton fisico simulando 
+        //el timbre
         ws.onmessage = function(event) {
             var obj = JSON.parse(event.data);
             if("btn" in obj) {
@@ -72,14 +88,12 @@
                 else
                     alert("Alguien acaba de tocar el Timbre");
             }
-            if("pwm" in obj) {
-                document.getElementById("slider").value = obj.pwm;
-            }
+        
         };      
     }
     </script>
         
-        <title>SmarHome FSEM</title>
+       <title>SmarHome FSEM</title>
     </head>
     <body>
        <nav  class="navbar navbar-dark bg-primary">
@@ -91,6 +105,7 @@
 <div class="container-fluid">
 
     <div class="row ">
+        <!--Area de Garaje con sus ID correspondientes -->    
         <div class="col-sm">
             <div class="card border-info mb-3" style="min-width: 20rem;min-height: 14rem;">
                 <div class="card-header">Puerta del Garage</div>
@@ -121,7 +136,7 @@
             
         </div>
 
-
+<!--Area de LUCES con sus ID correspondientes -->
         <div class="col-sm">
             <div class="card border-success mb-3" style="min-width: 20rem;min-height: 14rem;">
                 <div class="card-header">Encendido y Apagado de luces</div>
@@ -147,7 +162,7 @@
                 </div>
         </div>
 
-
+<!--Area de atenuacion de luces con sus ID correspondientes -->
         <div class="col-sm">
              <div class="card border-info mb-3" style="min-width: 20rem;min-height: 14rem;">
                 <div class="card-header">Atenuación de la luz</div>
@@ -167,7 +182,7 @@
       
     </div>
 
-
+<!--Area de Programacion de luz con sus ID correspondientes -->
     <div class="row ">
         <div class="col-sm">
             <div class="card border-info mb-3" style="min-width: 20rem;min-height: 14rem;">
@@ -207,13 +222,13 @@
             
         </div>
 
-
+    <!--Area de camaras se utiliza motion se utiliza el localhost y el puerto especificado en el archivo motion.conf -->
         <div class="col-sm">
             <div class="card border-success mb-3" style="min-width: 20rem;min-height: 14rem;">
                 <div class="card-header">Cam</div>
                         <div class="card-body text-info" style="aling-items: center; justify-content: center;display: flex;" >
                         <button type="button" class="btn btn-success btn-lg " >
-                        <a href="http://127.0.0.1:8081" target="_blank"> <!--motion-->
+                        <a href="http://127.0.0.1:8081" target="_blank"> <!--motion puerto 8081-->
                             <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-device-computer-camera" width="44" height="44" viewBox="0 0 24 24" stroke-width="1.5" stroke="#ffffff" fill="none" stroke-linecap="round" stroke-linejoin="round">
                             <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
                             <circle cx="12" cy="10" r="7" />
@@ -239,18 +254,10 @@
 
 
     
-
-    
       
     </div>
     
 
-
-
-
-  
-
-    
 
 
     </body>
@@ -285,3 +292,4 @@
 </footer>
 
 </html>
+
