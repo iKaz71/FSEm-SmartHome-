@@ -89,7 +89,11 @@ sudo nano /etc/default/motion
 ```sh
 $ sudo motion
 ```
+# interfaz en movil 
+![1](/img/1.png)![2](/img/2.png)
 
+Video en Youtube
+https://youtu.be/Mn9w4tbmyQY
 
 License
 ----
