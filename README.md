@@ -14,10 +14,10 @@ Concentrador Smarthome es un sistema embebido desarrollado en JavasScriptpara en
   
   
 ### Instalación
-Se necesita de Python 3 para su correcto funcionamiento
+Se necesita de NodeJS para su correcto funcionamiento
 Para poder hacer uso del programa SmartHome es necesario hacer la instalacion de algunos paquetes.
 
-En primer actualice la lista de paquetes de su sistema:
+En primer lugar actualice la lista de paquetes de su sistema:
 ```sh
 $ sudo apt-get update
 ```
