@@ -1,5 +1,5 @@
 # FSEm-SmartHome-
-Concentrador Smarthome es un sistema embebido desarrollado en JavasScriptpara en Raspberry Pi 3. 
+Concentrador Smarthome es un sistema embebido desarrollado en JavasScript para en Raspberry Pi 3. 
 - Abrir y cerrar el Garaje
 - Encendido de luces
 - Atenuacion de la luz
