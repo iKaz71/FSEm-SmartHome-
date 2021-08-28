@@ -1,7 +1,7 @@
 //app.js
 //Control SmartHome a traves de servidor web
 // usando Raspberry pi 3b+
-//Autor:Hernandez Francisco Omar
+//
 //License: MIT
 //
 //////////////////////////////////////////////
